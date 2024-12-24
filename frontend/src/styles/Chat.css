@@ -1,0 +1,129 @@
+/* Chat.css */
+
+/* Основной контейнер чата */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+}
+
+/* Контейнер для сообщений */
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loading-messages {
+    font-family: 'BAHNSCHIRT';
+    color: #e0e0e0;
+    font-size: 24px ;
+}
+
+/* Базовый стиль для сообщений */
+.message {
+    padding: 12px 16px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: justify;
+}
+
+/* Сообщения отправителя (справа) */
+.message.self {
+    background-color: #405a91;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Сообщения получателя (слева) */
+.message.received {
+    background-color: #333;
+    color: #e0e0e0;
+    align-self: flex-start;
+}
+
+/* Имя пользователя */
+.message-username {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Username у отправленных сообщений */
+.message.self .message-username {
+    text-align: right;
+    color: #a7ffeb;
+}
+
+/* Username у полученных сообщений */
+.message.received .message-username {
+    text-align: left;
+    color: #00bfae;
+}
+
+/* Поле ввода и кнопка */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #333;
+    border-top: 2px solid #444;
+}
+
+input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 10px;
+    outline: none;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+input:focus {
+    border-color: #7f85cf;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000874;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #010868;
+    color: #cfcfcf;
+}
+
+/* Скроллбар для сообщений */
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}

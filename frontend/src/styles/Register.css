@@ -1,0 +1,97 @@
+/* Основной контейнер для страницы */
+.register-container {
+    display: flex;               /* Flexbox для выравнивания */
+    justify-content: center;     /* Центрирование по горизонтали */
+    align-items: center;         /* Центрирование по вертикали */
+    height: 100vh;               /* Занимает всю высоту экрана */
+    width: 100vw;                /* Занимает всю ширину экрана */
+    margin: 0;                   /* Убираем внешние отступы */
+    padding: 0;                  /* Убираем внутренние отступы */
+    background-color: #121212;   /* Темный фон */
+    box-sizing: border-box;      /* Учитываем padding в расчете ширины */
+}
+
+/* Форма для регистрации */
+.register-form {
+    width: 100%;
+    max-width: 400px;            /* Ограничиваем максимальную ширину */
+    padding: 40px;
+    border-radius: 12px;
+    background-color: #181818;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;      /* Выравнивание элементов по вертикали */
+    gap: 15px;                   /* Отступ между элементами */
+    box-sizing: border-box;      /* Учитываем padding в расчет ширины */
+    justify-content: center;     /* Центрирование контента по вертикали */
+}
+
+/* Заголовок формы */
+.register-title {
+    font-size: 48px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* Стиль для всех текстовых полей */
+.register-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #242424;
+    color: #d6d6d6;
+    box-sizing: border-box; /* Учитываем padding в расчете ширины */
+    display: block; /* Это для того, чтобы блоки занимали всю ширину */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.register-input:focus {
+    border-color: #7f85cf;
+    outline: none;
+}
+
+/* Стиль для кнопки */
+.register-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #000874;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #010868;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Ссылка на вход */
+.register-login-link {
+    color: #e0e0e0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.register-login-link a {
+    color: #7f85cf;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-login-link a:hover {
+    color: #4b60a8;
+}
