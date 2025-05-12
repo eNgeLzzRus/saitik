@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getUsername, getToken } from '../utils/auth';  // Убедитесь, что у вас есть эти утилиты для получения username и token
-import '../styles/Chat.css';  // Импортируем стили
+import { getUsername, getToken } from '../utils/auth';  
+import '../styles/Chat.css'; 
 
 const Chat = () => {
     const [inputText, setInputText] = useState('');
     const [messages, setMessages] = useState([]);
-    const username = getUsername();  // Имя пользователя получаем из утилиты
+    const username = getUsername(); 
     const [ws, setWs] = useState(null);
-    const messagesEndRef = useRef(null);  // Ссылка на контейнер для прокрутки
+    const messagesEndRef = useRef(null); 
 
     // Создаем WebSocket-соединение
     useEffect(() => {
@@ -20,10 +20,9 @@ const Chat = () => {
 
         socket.onmessage = (event) => {
             const incomingMessage = JSON.parse(event.data);
-            // Проверяем, не были ли удалены сообщения
             if (incomingMessage.deleted) {
                 console.log('Сообщения были удалены');
-                setMessages([]); // Очистить локальные сообщения
+                setMessages([]); 
             } else {
                 setMessages((prevMessages) => [...prevMessages, incomingMessage]);
             }
@@ -44,11 +43,11 @@ const Chat = () => {
         return () => {
             socket.close();
         };
-    }, []);  // Пустой массив зависимостей означает, что useEffect сработает только при монтировании компонента
+    }, []);  
 
     // Функция для получения всех сообщений
     const fetchMessages = async () => {
-        const token = getToken();  // Получаем токен для авторизации
+        const token = getToken(); 
 
         try {
             const response = await fetch('http://localhost:5000/messages', {
@@ -65,7 +64,7 @@ const Chat = () => {
 
             const data = await response.json();
             if (data.success) {
-                setMessages(data.messages);  // Обновляем сообщения в состоянии
+                setMessages(data.messages); 
             }
         } catch (error) {
             console.error('Ошибка при загрузке сообщений:', error);
@@ -85,8 +84,8 @@ const Chat = () => {
                 message: inputText,
             };
 
-            ws.send(JSON.stringify(message));  // Отправляем сообщение
-            setInputText('');  // Очищаем поле ввода
+            ws.send(JSON.stringify(message));  
+            setInputText(''); 
         } else {
             console.error('WebSocket не подключен');
         }
@@ -124,7 +123,6 @@ const Chat = () => {
                         </div>
                     ))
                 )}
-                {/* Этот элемент будет использоваться для прокрутки к последнему сообщению */}
                 <div ref={messagesEndRef} />
             </div>
             <div className="input-container">
