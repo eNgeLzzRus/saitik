@@ -13,8 +13,8 @@ export const isAuthenticated = () => {
 
     try {
         const decoded = jwtDecode(token);
-        const currentTime = Date.now() / 1000; // Текущее время в секундах
-        return decoded.exp > currentTime; // Проверка срока действия токена
+        const currentTime = Date.now() / 1000; 
+        return decoded.exp > currentTime; 
     } catch (error) {
         return false;
     }
@@ -36,5 +36,5 @@ export const getUsername = () => {
 // Выход из аккаунта
 export const logout = () => {
     localStorage.removeItem('token');
-    window.location.href = '/login'; // Перенаправление на страницу входа
+    window.location.href = '/login'; 
 };
