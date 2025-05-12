@@ -4,7 +4,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Chat from './components/Chat';
 import { isAuthenticated } from './utils/auth';
-import './App.css';  // Глобальные стили
+import './App.css';  
 import Header from './components/Header';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
                         path="/chat"
                         element={isAuthenticated() ? (
                             <>
-                                <Header />  {/* Шапка будет отображаться только на странице чата */}
+                                <Header /> 
                                 <Chat />
                             </>
                         ) : <Navigate to="/login" />}
