@@ -1,25 +1,20 @@
-/* App.css */
-
-/* Общие стили для всей страницы */
 .app-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;  /* Чтобы контейнер занимал всю высоту экрана */
+  min-height: 100vh;  
   background-color: #121212;
 }
 
-/* Стили для контейнера Header и Chat */
 .container {
   display: flex;
   flex-direction: column;
   width: 80%;
-  max-width: 1600px;         /* Максимальная ширина */
-  margin: 0 auto;            /* Центрирование по горизонтали */
+  max-width: 1600px;     
+  margin: 0 auto;           
 }
 
-/* Контейнер для шапки и чата */
 .header-container,
 .chat-container {
   width: 100%;
@@ -27,13 +22,11 @@
   margin-top: 20px;
 }
 
-/* Стили для других общих элементов */
 input,
 button {
   font-family: 'BAHNSCHRIFT', sans-serif;
 }
 
-/* Стили для контейнера, когда компонент еще не загружен */
 .loading {
   color: white;
   text-align: center;
