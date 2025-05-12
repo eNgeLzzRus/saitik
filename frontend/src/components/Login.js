@@ -15,9 +15,9 @@ function Login() {
                 username,
                 password,
             });
-            localStorage.setItem('token', response.data.token); // Сохраняем токен
-            localStorage.setItem('username', username); // Сохраняем имя пользователя
-            navigate('/chat'); // Перенаправляем в чат
+            localStorage.setItem('token', response.data.token); 
+            localStorage.setItem('username', username); 
+            navigate('/chat'); 
         } catch (error) {
             alert('Ошибка входа');
         }
