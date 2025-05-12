@@ -1,76 +1,70 @@
 .header-container {
-    background-color: #181818; /* Темный фон */
+    background-color: #181818; 
     padding: 0;
-    display: flex; /* Flexbox для выравнивания */
-    justify-content: space-between; /* Логотип слева, кнопка справа */
-    align-items: center; /* Центрирование элементов по вертикали */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
     border-top-left-radius: 12px;
     border-top-right-radius: 12px ;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Тень */
-    width: 100%; /* Растяжение на всю ширину */
-    transition: all 0.3s ease; /* Плавные переходы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+    width: 100%; 
+    transition: all 0.3s ease; 
 }
 
-/* Логотип и название проекта */
 .header-logo {
-    display: flex; /* Flexbox для выравнивания логотипа и текста */
-    align-items: center; /* Центрирование по вертикали */
+    display: flex; 
+    align-items: center; 
     padding-left: 20px;
     gap: 20px;
     font-weight: 600;
     color: #8d3535;
-    letter-spacing: 1px; /* Расстояние между буквами */
+    letter-spacing: 1px; 
     position: relative;
 }
 
-/* Текст логотипа */
 .header-logo h1 {
-    font-size: 48px; /* Размер шрифта */
+    font-size: 48px;
     font-family: "Basique";
-    transition: all 0.5s ease; /* Плавные анимации */
-    z-index: 1; /* Поверх других элементов */
+    transition: all 0.5s ease;
+    z-index: 1; 
 }
 
-/* Логотип */
 .header-logo img {
     width: 80px;
     height: 80px;
-    transition: all 1s ease; /* Анимация движения и вращения */
+    transition: all 1s ease; 
     position: relative;
-    z-index: 2; /* Логотип поверх текста */
+    z-index: 2; 
 }
 
-/* Анимация при наведении */
 .header-logo:hover h1 {
-    transform: translateX(-30%); /* Текст сдвигается влево */
-    color: #181818; /* Прозрачность текста */
+    transform: translateX(-30%); 
+    color: #181818; 
 }
 
 .header-logo:hover img {
-    transform: translateX(120px) rotate(360deg) scale(1.5); /* Логотип двигается вправо и вращается */
+    transform: translateX(120px) rotate(360deg) scale(1.5); 
 }
 
-
-/* Кнопка выхода */
 .header-button {
-    background-color: #861515; /* Красный фон для кнопки */
+    background-color: #861515; 
     color: white;
     border: none;
     padding: 12px 20px;
     margin-right: 20px;
-    border-radius: 30px; /* Более круглые края */
+    border-radius: 30px; 
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавный переход */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
 .header-button:hover {
-    background-color: #721818; /* Темнее при наведении */
-    transform: translateY(-3px); /* Легкое поднятие кнопки */
+    background-color: #721818; 
+    transform: translateY(-3px); 
 }
 
 .header-button:active {
-    background-color: #721818; /* Еще более темный красный при клике */
-    transform: translateY(0); /* Возвращение кнопки в исходное положение */
+    background-color: #721818; 
+    transform: translateY(0); 
 }
